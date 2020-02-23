@@ -121,9 +121,9 @@ namespace Current_Weather
                     // hhtt://weather-scharp.herokuapp.com/photo?city=dallas&state=tx
                     string weatherPhotoUrl = String.Format("{0}photo?city={1}&state={2}", BaseUrl, city, state);
                     string tempFileDirectory = Path.GetTempPath().ToString(); // Directory to save image
-                    String.weatherFilePath = Path.Combine(tempFileDirectory, "weather_image.jpeg"); // Plus filename to make complete path
+                    String weatherFilePath = Path.Combine(tempFileDirectory, "weather_image.jpeg"); // Plus filename to make complete path
                     Debug.WriteLine(weatherFilePath);
-                    client.DownLoadFile(weatherPhotoUrl, weatherFilePath); //Download from URL
+                    client.DownloadFile(weatherPhotoUrl, weatherFilePath); //Download from URL
                     weatherImage = Image.FromFile(weatherFilePath);//setting the out parameter
                 }
                 return true; //Request was made, file was saved, no errors
