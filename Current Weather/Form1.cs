@@ -145,7 +145,11 @@ namespace Current_Weather
         {
 
         }
-        
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();//end program with close method
+        }
     }
     
 }
