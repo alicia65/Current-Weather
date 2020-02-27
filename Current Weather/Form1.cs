@@ -17,6 +17,16 @@ namespace Current_Weather
     {
         //Global wariable with server's address
         readonly string BaseUrl = "https://weather-csharp.herokuapp.com/";
+
+        string[] States = {"Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado",
+            "Connecticut", "Delaware", "District of Columbia", "Florida", "Georgia", "Hawaii",
+            "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine",
+            "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri",
+            "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York",
+            "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+            "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah",
+            "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming" };
+
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +39,7 @@ namespace Current_Weather
 
             //Read data from TextBoxes
             string city = txtCity.Text;
-            string state = txtState.Text;
+            string state = cbxState.Text;
 
             if (LocationDataValid(city, state))
             {
@@ -149,6 +159,11 @@ namespace Current_Weather
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();//end program with close method
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cbxState.Items.AddRange(States);
         }
     }
     
